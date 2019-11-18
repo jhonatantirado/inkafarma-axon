@@ -1,6 +1,8 @@
 package pe.edu.unmsm.upg.inkafarma.sales.api;
 
 import pe.edu.unmsm.upg.inkafarma.sales.application.dto.*;
+import pe.edu.unmsm.upg.inkafarma.sales.domain.service.SalesService;
+
 import java.util.*;
 import java.util.concurrent.CompletableFuture;
 
@@ -35,6 +37,8 @@ public class SalesOrderCommandController {
 	ApiResponseHandler apiResponseHandler;
 	@Autowired
 	SalesViewRepository salesViewRepository;
+	@Autowired
+	private SalesService salesService;
 	
 	private final CommandGateway commandGateway;
 	
@@ -73,13 +77,12 @@ public class SalesOrderCommandController {
     }
 	
 	@GetMapping("findByMono/{id}")
-    public ResponseEntity<Object> findByIdMono(@PathVariable String id) {
+    public ResponseEntity<Mono<SalesView>> findByIdMono(@PathVariable String id) {
 		 try {
-	            return new ResponseEntity<Object>(salesViewRepository.findOneBySalesId(id), HttpStatus.OK);
+	            return new ResponseEntity<Mono<SalesView>>(salesService.getSaleById(id), HttpStatus.OK);
 	        } catch(IllegalArgumentException ex) {
-	        	return new ResponseEntity<Object>(apiResponseHandler.getApplicationError(ex.getMessage()), HttpStatus.BAD_REQUEST);
-	        } catch(Exception ex) {
-	        	return new ResponseEntity<Object>(apiResponseHandler.getApplicationException(), HttpStatus.INTERNAL_SERVER_ERROR);
-	        }   
+	        	ex.printStackTrace();	
+	        }
+		 return null;
     }
 }
