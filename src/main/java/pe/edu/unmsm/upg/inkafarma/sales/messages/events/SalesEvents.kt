@@ -1,11 +1,13 @@
 package pe.edu.unmsm.upg.inkafarma.sales.messages.events
 import java.util.Date;
 import pe.edu.unmsm.upg.inkafarma.sales.domain.Status
+import pe.edu.unmsm.upg.inkafarma.sales.domain.SaleOrderDetail
 
 class SalesOrderRequestedEvent (
 	val saleId: String,
-	val customerId: String,
-	val employeeId : String
+	val customerId: Long,
+	val employeeId : Long,
+	val details: List<SaleOrderDetail>
 )
 
 class SalesOrderFailedEvent (
@@ -15,13 +17,18 @@ class SalesOrderFailedEvent (
 class SalesOrderCompletedEvent (
 	val saleId: String,
 	val saleDate: Date,
-	val customerId: String,
-	val employeeId : String,
+	val customerId: Long,
+	val employeeId : Long,
 	val status: Status
 )
 
-class DetailSalesOrderCompletedEvent (
+class DetailSalesOrderRequestEvent (
 	val saleId: String
+)
+
+class DetailSalesOrderCompletedEvent (
+	val saleId: String,
+	val details: List<SaleOrderDetail>
 )
 
 class SalesOrderRejectedEvent (

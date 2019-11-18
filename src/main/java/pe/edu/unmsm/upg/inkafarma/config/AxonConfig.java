@@ -9,8 +9,6 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import pe.edu.unmsm.upg.inkafarma.accounts.application.AccountCommandHandler;
-import pe.edu.unmsm.upg.inkafarma.accounts.domain.Account;
 
 @Configuration
 public class AxonConfig {
@@ -20,10 +18,10 @@ public class AxonConfig {
     @Autowired
     private EventBus eventBus;
 
-    @Bean
-    public AccountCommandHandler accountCommandHandler() {
-        return new AccountCommandHandler(axonConfiguration.repository(Account.class), eventBus);
-    }
+    //@Bean
+    //public AccountCommandHandler accountCommandHandler() {
+    //    return new AccountCommandHandler(axonConfiguration.repository(Account.class), eventBus);
+    //}
 
     @Autowired
     public void configure(@Qualifier("localSegment") SimpleCommandBus simpleCommandBus) {

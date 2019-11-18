@@ -26,7 +26,8 @@ public class SalesOrderCommandController {
 		RequestSalesOrderCommand command = new RequestSalesOrderCommand(
 			salesId,
 			salesRequestDto.getCustomerId(),
-			salesRequestDto.getEmployeeId()
+			salesRequestDto.getEmployeeId(),
+			salesRequestDto.getDetails()
 		);
 		CompletableFuture<Object> future = commandGateway.send(command);
 		CompletableFuture<Object> response = future.handle((ok, ex) -> {

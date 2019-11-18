@@ -13,8 +13,8 @@ public class SalesView {
 	@Column(length=36)
 	private String salesId;
 	private Date saleDate;
-	private String customerId;
-	private String employeeId;
+	private Long customerId;
+	private Long employeeId;
 	private Status status;
 		
 	public Status getStatus() {
@@ -29,7 +29,7 @@ public class SalesView {
 		
 	}
 
-	public SalesView(String salesId, Date saleDate, String customerId, String employeeId, Status status ) {
+	public SalesView(String salesId, Date saleDate, Long customerId, Long employeeId, Status status ) {
 		this.salesId = salesId;
 		this.saleDate = saleDate;
 		this.customerId = customerId;
@@ -45,19 +45,19 @@ public class SalesView {
 		this.salesId = salesId;
 	}
 
-	public String getCustomerId() {
+	public Long getCustomerId() {
 		return customerId;
 	}
 
-	public void setCustomerId(String customerId) {
+	public void setCustomerId(Long customerId) {
 		this.customerId = customerId;
 	}
 
-	public String getEmployeeId() {
+	public Long getEmployeeId() {
 		return employeeId;
 	}
 
-	public void setEmployeeId(String employeeId) {
+	public void setEmployeeId(Long employeeId) {
 		this.employeeId = employeeId;
 	}
 

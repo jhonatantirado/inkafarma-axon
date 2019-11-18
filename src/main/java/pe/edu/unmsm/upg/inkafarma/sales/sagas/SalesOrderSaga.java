@@ -5,18 +5,14 @@ import org.axonframework.modelling.saga.SagaEventHandler;
 import org.axonframework.modelling.saga.StartSaga;
 import org.axonframework.spring.stereotype.Saga;
 import pe.edu.unmsm.upg.inkafarma.sales.messages.events.*;
-import pe.edu.unmsm.upg.inkafarma.transfers.messages.commands.MarkMoneyTransferCompletedCommand;
-import pe.edu.unmsm.upg.inkafarma.transfers.messages.commands.MarkMoneyTransferFailedCommand;
-import pe.edu.unmsm.upg.inkafarma.accounts.messages.events.DestinationAccountCreditedEvent;
-import pe.edu.unmsm.upg.inkafarma.accounts.messages.events.SourceAccountDebitRejectedEvent;
 import pe.edu.unmsm.upg.inkafarma.sales.messages.commands.*;
 import javax.inject.Inject;
 import java.util.Date;
 
 @Saga
 public class SalesOrderSaga {
-	private String customerId;
-	private String employeeId;
+	private long customerId;
+	private long employeeId;
 	
 	@Inject
     private transient CommandGateway commandGateway;
@@ -41,10 +37,12 @@ public class SalesOrderSaga {
 	
 	@EndSaga
     @SagaEventHandler(associationProperty = "saleId")
-    public void on(DetailSalesOrderCompletedEvent event) {
+    public void on(DetailSalesOrderRequestEvent event) {
         MarkSalesOrderCompletedCommand command = new MarkSalesOrderCompletedCommand(event.getSaleId());
         commandGateway.send(command);
-        
+       
+        MarkDetailSalesOrderCompletedCommand commandDetail = new MarkDetailSalesOrderCompletedCommand(event.getSaleId());
+        commandGateway.send(commandDetail);
     }
 	
 }
