@@ -47,7 +47,7 @@ public class SalesOrder {
 	
 	@CommandHandler
     public void handle(MarkSalesOrderCompletedCommand command) {
-        apply(new SalesOrderCompletedEvent(command.getSaleId(), this.saleDate, this.customerId, this.employeeId ));
+        apply(new SalesOrderCompletedEvent(command.getSaleId(), this.saleDate, this.customerId, this.employeeId, this.status ));
     }
 	
 	@CommandHandler

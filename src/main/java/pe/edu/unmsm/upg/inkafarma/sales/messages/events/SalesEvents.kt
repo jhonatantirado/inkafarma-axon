@@ -16,7 +16,8 @@ class SalesOrderCompletedEvent (
 	val saleId: String,
 	val saleDate: Date,
 	val customerId: String,
-	val employeeId : String
+	val employeeId : String,
+	val status: Status
 )
 
 class DetailSalesOrderCompletedEvent (

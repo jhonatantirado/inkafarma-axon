@@ -15,16 +15,26 @@ public class SalesView {
 	private Date saleDate;
 	private String customerId;
 	private String employeeId;
+	private Status status;
 		
+	public Status getStatus() {
+		return status;
+	}
+
+	public void setStatus(Status status) {
+		this.status = status;
+	}
+
 	public SalesView() {
 		
 	}
 
-	public SalesView(String salesId, Date saleDate, String customerId, String employeeId ) {
+	public SalesView(String salesId, Date saleDate, String customerId, String employeeId, Status status ) {
 		this.salesId = salesId;
 		this.saleDate = saleDate;
 		this.customerId = customerId;
 		this.employeeId = employeeId;
+		this.status = status;
 	}
 
 	public String getSalesId() {
