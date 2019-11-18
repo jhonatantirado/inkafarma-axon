@@ -12,7 +12,6 @@ import java.util.Date;
 @Saga
 public class SalesOrderSaga {
 	private long customerId;
-	private long employeeId;
 	
 	@Inject
     private transient CommandGateway commandGateway;
@@ -21,7 +20,6 @@ public class SalesOrderSaga {
     @SagaEventHandler(associationProperty = "saleId")
     public void on(SalesOrderRequestedEvent event) {
 		this.customerId = event.getCustomerId();
-        this.employeeId = event.getEmployeeId();                       
 		
 		DetailSaleOrderCommand command = new DetailSaleOrderCommand(event.getSaleId());
 		commandGateway.send(command);

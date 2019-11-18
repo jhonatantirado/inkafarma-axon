@@ -14,26 +14,16 @@ public class SalesView {
 	private String salesId;
 	private Date saleDate;
 	private Long customerId;
-	private Long employeeId;
-	private Status status;
-		
-	public Status getStatus() {
-		return status;
-	}
-
-	public void setStatus(Status status) {
-		this.status = status;
-	}
+	private int status;
 
 	public SalesView() {
 		
 	}
 
-	public SalesView(String salesId, Date saleDate, Long customerId, Long employeeId, Status status ) {
+	public SalesView(String salesId, Date saleDate, Long customerId, int status ) {
 		this.salesId = salesId;
 		this.saleDate = saleDate;
 		this.customerId = customerId;
-		this.employeeId = employeeId;
 		this.status = status;
 	}
 
@@ -53,14 +43,6 @@ public class SalesView {
 		this.customerId = customerId;
 	}
 
-	public Long getEmployeeId() {
-		return employeeId;
-	}
-
-	public void setEmployeeId(Long employeeId) {
-		this.employeeId = employeeId;
-	}
-
 	public Date getSaleDate() {
 		return saleDate;
 	}
@@ -69,4 +51,13 @@ public class SalesView {
 		this.saleDate = saleDate;
 	}
 
+	public int getStatus() {
+		return status;
+	}
+
+	public void setStatus(int status) {
+		this.status = status;
+	}
+
+	
 }

@@ -14,7 +14,7 @@ public class SalesProjection {
 	
 	@EventHandler
     public void on(SalesOrderCompletedEvent event) {
-		SalesView salesView = new SalesView(event.getSaleId(), event.getSaleDate(), event.getCustomerId(), event.getEmployeeId(), event.getStatus());
+		SalesView salesView = new SalesView(event.getSaleId(), event.getSaleDate(), event.getCustomerId(), 1);
 		salesViewRepository.save(salesView);
     }
 }

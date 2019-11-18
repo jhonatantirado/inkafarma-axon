@@ -32,8 +32,6 @@ public class SalesOrder {
 	@SuppressWarnings("unused")
 	private long customerId;
 	@SuppressWarnings("unused")
-	private long employeeId;
-	@SuppressWarnings("unused")
 	private Status status;
 	@SuppressWarnings("unused")
 	private List<SaleOrderDetail> details;
@@ -48,7 +46,6 @@ public class SalesOrder {
         	new SalesOrderRequestedEvent(
         		command.getSaleId(),
         		command.getCustomerId(),
-        		command.getEmployeeId(),
         		command.getDetails()
         	)
         );
@@ -56,7 +53,7 @@ public class SalesOrder {
 	
 	@CommandHandler
     public void handle(MarkSalesOrderCompletedCommand command) {
-        apply(new SalesOrderCompletedEvent(command.getSaleId(), this.saleDate, this.customerId, this.employeeId, this.status ));
+        apply(new SalesOrderCompletedEvent(command.getSaleId(), this.saleDate, this.customerId, this.status ));
     }
 	
 	@CommandHandler
@@ -83,7 +80,6 @@ public class SalesOrder {
         this.saleId = event.getSaleId();
         this.saleDate = new Date();
         this.customerId = event.getCustomerId();
-        this.employeeId = event.getEmployeeId();
         this.details = event.getDetails();     
         this.status = Status.STARTED;        
     }

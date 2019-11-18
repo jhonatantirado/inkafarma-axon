@@ -6,7 +6,6 @@ import java.util.Date;
 class RequestSalesOrderCommand(
 	@TargetAggregateIdentifier val saleId: String,
 	val customerId: Long,
-	val employeeId : Long,
 	val details: List<SaleOrderDetail>
 )
 

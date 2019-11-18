@@ -6,7 +6,6 @@ import pe.edu.unmsm.upg.inkafarma.sales.domain.SaleOrderDetail
 class SalesOrderRequestedEvent (
 	val saleId: String,
 	val customerId: Long,
-	val employeeId : Long,
 	val details: List<SaleOrderDetail>
 )
 
@@ -18,7 +17,6 @@ class SalesOrderCompletedEvent (
 	val saleId: String,
 	val saleDate: Date,
 	val customerId: Long,
-	val employeeId : Long,
 	val status: Status
 )
 
