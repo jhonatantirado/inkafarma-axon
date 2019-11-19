@@ -1,6 +1,9 @@
 pe\edu\unmsm\upg\inkafarma\sales\application\dto\SalesOrderOkResponseDto.class
+pe\edu\unmsm\upg\inkafarma\application\notification\Notification.class
 pe\edu\unmsm\upg\inkafarma\sales\api\SalesOrderCommandController.class
 pe\edu\unmsm\upg\inkafarma\sales\query\SalesView.class
+pe\edu\unmsm\upg\inkafarma\application\notification\Error.class
+pe\edu\unmsm\upg\inkafarma\common\application\ApiResponseHandler.class
 pe\edu\unmsm\upg\inkafarma\sales\query\DetailSaleViewRepository.class
 pe\edu\unmsm\upg\inkafarma\sales\domain\Status.class
 pe\edu\unmsm\upg\inkafarma\sales\query\SalesViewRepository.class
@@ -10,7 +13,11 @@ pe\edu\unmsm\upg\inkafarma\sales\query\SalesProjection.class
 pe\edu\unmsm\upg\inkafarma\sales\query\DetailSaleView.class
 pe\edu\unmsm\upg\inkafarma\sales\domain\SaleOrderDetail.class
 pe\edu\unmsm\upg\inkafarma\sales\application\dto\SalesOrderRequestDto.class
+pe\edu\unmsm\upg\inkafarma\sales\domain\impl\SalesServiceImpl.class
+pe\edu\unmsm\upg\inkafarma\sales\domain\service\SalesService.class
 pe\edu\unmsm\upg\inkafarma\sales\application\dto\SalesOrderErrorResponseDto.class
+pe\edu\unmsm\upg\inkafarma\common\application\dto\ApiStringResponseDto.class
 pe\edu\unmsm\upg\inkafarma\InkafarmaAxonApplication.class
 pe\edu\unmsm\upg\inkafarma\sales\sagas\SalesOrderSaga.class
 pe\edu\unmsm\upg\inkafarma\sales\query\DetailSaleProjection.class
+pe\edu\unmsm\upg\inkafarma\common\application\dto\ApiErrorDto.class

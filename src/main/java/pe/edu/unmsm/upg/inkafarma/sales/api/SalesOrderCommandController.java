@@ -85,4 +85,15 @@ public class SalesOrderCommandController {
 	        }
 		 return null;
     }
+	
+	@RequestMapping(method = RequestMethod.GET, produces = MediaType.TEXT_EVENT_STREAM_VALUE, path = "/allFlux")
+    @ResponseBody
+    public ResponseEntity<Flux<SalesView>> findAll() {
+        try {
+            return new ResponseEntity<Flux<SalesView>>(salesService.findAll(), HttpStatus.OK);
+        } catch(IllegalArgumentException ex) {
+        	ex.printStackTrace();	
+        }
+        return null;
+    }
 }

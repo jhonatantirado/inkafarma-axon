@@ -3,8 +3,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-import pe.edu.unmsm.upg.inkafarma.sales.domain.Status;
-
 import java.util.Date;
 
 @Entity
