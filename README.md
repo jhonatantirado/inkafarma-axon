@@ -40,8 +40,8 @@ inkafarma with Axon 4.2 & Spring Boot 2.2.0 & Webflux
 
 
 @GetMapping("findByMono/{id}")
-##http://localhost:8085/sales/findByMono/?
+## http://localhost:8085/sales/findByMono/?
 
 
 @RequestMapping(method = RequestMethod.GET, produces = MediaType.TEXT_EVENT_STREAM_VALUE, path = "/allFlux")
-##http://localhost:8085/sales/allFlux
+## http://localhost:8085/sales/allFlux
