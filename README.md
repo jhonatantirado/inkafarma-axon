@@ -5,7 +5,7 @@ inkafarma with Axon 4.2 & Spring Boot 2.2.0 & Webflux
 
 @PostMapping("")
 ## http://localhost:8085/sales
-```json```
+```json
 {
 	"customerId":2,
 	"details":[
