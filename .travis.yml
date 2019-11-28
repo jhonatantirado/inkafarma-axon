@@ -1,0 +1,13 @@
+---
+language: java
+sudo: false
+script: mvn clean verify
+
+deploy:
+   provider: cloudfoundry
+   username: richar.fernandez@unmsm.edu.pe
+   password: 
+     secure: "DGN8P8pYKQIcafqIsY4q+BQ7G09vYihTz2dcVmz2A8Qrby7b42bD3/0B+uog7yw5SqkPIP7vLl95gOSFWxgfIA5U9j6hzuDRoRD3ZYuxR+ZyIBhxuKVVVV98CSXsbYfnt4ftu5LrD14fI4wNkYz20XkIYUJ+azhP9/n9+CEUXqeMjIv2zF2LMfKE1elTa8DgTnmOYoQ6Kfgg7p85EZFS4ohMsFWkAPpowC52vAXmvdIgx3hXrh51F/plXUqn/wU6mokoH4fAeUB11BktnFu9Ckc/6QVdoJtWQP72v6/8w2mS8laRwkmC7SLj2QLz4VhHRxvjlzxdC7HSy3eaZ7T9ypLAgFq/D8WgngUQfGgqwhx7O23kMPKo+jUDEKjff6CG/WyHRFwCFrZ3cK0xO0sJ5S+8C3BEFFumshibvGmp77pxT8k19YUMzapA//gsYFWDJ3eAtAF/IWdEw9UOZ4h8VbNUcIMC2jYn3yoo6PehmXiCT6NTlHVItAzSnRy/1z6syLbhRJtM1DjrW9wpXu3/cayjBweL/cFg4iDOakHbH9oNmtnFTSr7+gCXlFONvVBhPWBDF2MEbsXKfK0g2unBp9cJpSqwyOVdOosKUyufImg3pIjlXCUco8GYT/zhS4Qe7Z0r21Z7B+vygaGUPhngTSPWc3YPCoZC83+uGhiXaco="
+   api: https://api.run.pivotal.io
+   organization: rfernandezvilchez
+   space: qa
